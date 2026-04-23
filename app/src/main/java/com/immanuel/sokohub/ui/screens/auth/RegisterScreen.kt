@@ -36,6 +36,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -46,6 +47,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.immanuel.sokohub.R
+import com.immanuel.sokohub.data.AuthViewModel
 import com.immanuel.sokohub.navigation.ROUT_LOGIN
 import com.immanuel.sokohub.ui.theme.newblue
 
@@ -156,8 +158,13 @@ fun RegisterScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
+        //Sign Up Button
+        val context = LocalContext.current
+        val authViewModel = AuthViewModel(navController, context)
         Button(
-            onClick = {},
+            onClick = {
+                authViewModel.signup(username, email, password,confirmpassword)
+            },
             colors = ButtonDefaults.buttonColors(newblue),
             shape = RoundedCornerShape(size = 10.dp),
             modifier = Modifier.width(160.dp)

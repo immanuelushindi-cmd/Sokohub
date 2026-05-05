@@ -7,8 +7,8 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import com.immanuel.sokohub.models.Product                  // ✔ matches renamed data class
-import com.immanuel.sokohub.navigation.ROUTE_VIEW_PRODUCTS
+import com.immanuel.sokohub.models.Product
+import com.immanuel.sokohub.navigation.ROUT_VIEW_PRODUCTS
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +25,7 @@ import java.io.InputStream
 class ProductViewModel : ViewModel() {
 
     companion object {
-        private const val CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/ds8y1vfji/image/upload"
+        private const val CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dtlr1zcuf/image/upload"
         private const val UPLOAD_PRESET = "sokohub"
 
         // Singleton OkHttpClient — reuse across all requests
@@ -67,7 +67,7 @@ class ProductViewModel : ViewModel() {
 
                 withContext(Dispatchers.Main) {
                     Toast.makeText(context, "Product saved successfully", Toast.LENGTH_LONG).show()
-                    navController.navigate(ROUTE_VIEW_PRODUCTS)
+                    navController.navigate(ROUT_VIEW_PRODUCTS)
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
@@ -177,7 +177,7 @@ class ProductViewModel : ViewModel() {
                 withContext(Dispatchers.Main) {
                     fetchProducts(context)
                     Toast.makeText(context, "Product updated successfully", Toast.LENGTH_LONG).show()
-                    navController.navigate(ROUTE_VIEW_PRODUCTS)
+                    navController.navigate(ROUT_VIEW_PRODUCTS)
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {

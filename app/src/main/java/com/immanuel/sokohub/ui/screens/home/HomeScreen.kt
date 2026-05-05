@@ -36,6 +36,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.paint
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -45,6 +46,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.immanuel.sokohub.R
+import com.immanuel.sokohub.navigation.ROUT_VIEW_PRODUCTS
 import com.immanuel.sokohub.ui.theme.newblue
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -75,9 +77,9 @@ fun HomeScreen(navController: NavController) {
             },
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = newblue,
-                navigationIconContentColor = androidx.compose.ui.graphics.Color.White,
-                actionIconContentColor = androidx.compose.ui.graphics.Color.White,
-                titleContentColor = androidx.compose.ui.graphics.Color.White
+                navigationIconContentColor = Color.White,
+                actionIconContentColor = Color.White,
+                titleContentColor = Color.White
             )
         )
 
@@ -136,9 +138,9 @@ fun HomeScreen(navController: NavController) {
                     )
 
                     Button(
-                        onClick = {},
-                        colors = ButtonDefaults.buttonColors(newblue),
-                        shape = RoundedCornerShape(10.dp),
+                        onClick = { navController.navigate(ROUT_VIEW_PRODUCTS) },
+                        colors = ButtonDefaults.buttonColors(containerColor = newblue),
+                        shape = RoundedCornerShape(size = 10.dp),
                         modifier = Modifier.padding(start = 20.dp)
                     ) {
                         Text(text = "Shop Now")

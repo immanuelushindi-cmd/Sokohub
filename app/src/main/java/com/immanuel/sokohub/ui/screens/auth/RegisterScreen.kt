@@ -180,13 +180,13 @@ fun RegisterScreen(navController: NavController){
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        TextButton(onClick = {  navController.navigate(ROUT_LOGIN)}) { }
-
-        Text(
-            text = "Already have an Account? Login",
-            fontWeight = FontWeight.Medium,
-        )
-
+        TextButton(onClick = { navController.navigate(ROUT_LOGIN) }) {
+            Text(
+                text = "Already have an Account? Login",
+                fontWeight = FontWeight.Medium,
+                fontSize = 15.sp
+            )
+        }
 
 
 

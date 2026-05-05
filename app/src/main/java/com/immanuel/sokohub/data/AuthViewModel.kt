@@ -12,6 +12,7 @@ import com.immanuel.sokohub.navigation.ROUT_REGISTER
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
+import com.immanuel.sokohub.navigation.ROUT_ADD_PRODUCT
 import com.immanuel.sokohub.navigation.ROUT_ONBOARDING
 
 class AuthViewModel(var navController: NavController, var context: Context){
@@ -84,7 +85,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
                         Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
 
                         if (role == "admin") {
-                            navController.navigate(ROUT_ONBOARDING)   // <-- change to your actual route
+                            navController.navigate(ROUT_ADD_PRODUCT)   // <-- change to your actual route
                         }
 
 

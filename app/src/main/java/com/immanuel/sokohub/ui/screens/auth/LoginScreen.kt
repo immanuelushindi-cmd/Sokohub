@@ -128,7 +128,7 @@ fun LoginScreen(navController: NavController) {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // ✅ Only ONE remains
+        // Only ONE remains
         TextButton(onClick = { navController.navigate(ROUT_REGISTER) }) {
             Text(
                 text = "Don't have an Account? Register",
@@ -138,7 +138,7 @@ fun LoginScreen(navController: NavController) {
     }
 }
 
-// ✅Preview OUTSIDE
+// Preview OUTSIDE
 @Preview(showBackground = true)
 @Composable
 fun LoginScreenPreview() {
